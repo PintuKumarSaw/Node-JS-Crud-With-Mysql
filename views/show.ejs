@@ -1,0 +1,57 @@
+<%-include ("layouts/navbar.ejs") %>
+
+    <body>
+        <h1 style="text-align: center;">Show All Data</h1>
+        <!-- <div class="form">
+        <form  method="get" action="/user/new">
+            <button> Add User</button>
+        </form>
+
+    </div> -->
+
+        <table class="table mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th colspan="2">Action</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <% for(user of users) { %>
+                <tr>
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <%= user.username %>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <%= user.password %>
+                    </td>
+
+                    <td>
+                        <form method="GET" action="/user/<%= user.id%>/edit">
+                            <button class="btn btn-primary"> Edit username </button>
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="/user/<%= user.id%>?_method=DELETE">
+                            <button class="btn btn-danger"> Delete username </button>
+                        </form>
+                    </td>
+
+                </tr>
+
+                <% } %>
+        </table>
+
+    </body>
+
+    </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+</head>
+<%- include("layouts/navbar.ejs")%>
+    <body>
+        <div class="row">
+           
+            <div class=" col-md-8 offset-md-4 mt-3">
+                <div class="card" style="width:500px">
+                    <h1>Edit the username only and  input correct Password </h1>
+                    <div class="card-body">
+                        <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" placeholder="<%=user.username%>"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="password" placeholder="<%= user.password%>"
+                                    class="form-control">
+                            </div>
+                            <button class="btn  btn-danger">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
